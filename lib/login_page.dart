@@ -50,35 +50,97 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Login")),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-            ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            ElevatedButton(
-              onPressed: _login,
-              child: Text("Login"),
-            ),
-            TextButton(
-              onPressed: () {
-                // Navega a la página de registro
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SignUpPage()),
-                );
-              },
-              child: Text("Sign Up"),
-            ),
-          ],
+      backgroundColor: Colors.white, // Fondo blanco
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Logo o título en la parte superior
+              Text(
+                "CoachPal",
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueAccent,
+                ),
+              ),
+              SizedBox(height: 40), // Espaciado
+
+              // Campo de Email
+              TextField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12), // Bordes redondeados
+                  ),
+                ),
+              ),
+              SizedBox(height: 20), // Espaciado
+
+              // Campo de Contraseña
+              TextField(
+                controller: _passwordController,
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12), // Bordes redondeados
+                  ),
+                ),
+                obscureText: true,
+              ),
+              SizedBox(height: 20), // Espaciado
+
+              // Botón de Inicio de Sesión
+              SizedBox(
+                width: double.infinity, // Botón que se ajusta al ancho
+                child: ElevatedButton(
+                  onPressed: _login,
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 16), // Altura del botón
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12), // Bordes redondeados
+                    ),
+                    backgroundColor: Colors.blueAccent, // Color del botón
+                  ),
+                  child: Text(
+                    "Sign In",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white, // Texto blanco
+                    ),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 20), // Espaciado
+
+              // Texto para redirigir a la página de registro
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don’t have an account?"),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUpPage()),
+                      );
+                    },
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        color: Colors.blueAccent,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
