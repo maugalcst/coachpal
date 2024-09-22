@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "376736213358",
+    "firebase_url": "https://coachpal-uanl-default-rtdb.firebaseio.com",
+    "project_id": "coachpal-uanl",
+    "storage_bucket": "coachpal-uanl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376736213358:android:79b78f4105e7df161b397f",
+        "android_client_info": {
+          "package_name": "com.example.coachpaluanl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-i4v0hGwshCexCwyLGRGn5e0-mudmgUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
