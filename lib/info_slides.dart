@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'user_type_selection_page.dart'; // Importa la página de selección de tipo de usuario
+import 'dashboard_page.dart'; // Importamos la página del dashboard
 
 class InfoSlides extends StatefulWidget {
   @override
@@ -36,10 +36,10 @@ class _InfoSlidesState extends State<InfoSlides> {
         actions: [
           TextButton(
             onPressed: () {
-              // Ir directamente al selector de tipo de usuario
+              // Asegúrate de que aquí redirigimos al DashboardPage
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => UserTypeSelectionPage()),
+                MaterialPageRoute(builder: (context) => DashboardPage()), // Verifica que DashboardPage sea el destino correcto
               );
             },
             child: Text(
@@ -118,8 +118,7 @@ class _InfoSlidesState extends State<InfoSlides> {
                   if (_currentPage == _slides.length - 1) {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => UserTypeSelectionPage()),
+                      MaterialPageRoute(builder: (context) => DashboardPage()), // Redirigir al Dashboard al finalizar las slides
                     );
                   } else {
                     _pageController.nextPage(
