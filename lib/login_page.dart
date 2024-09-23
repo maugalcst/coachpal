@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'signup_page.dart'; // Importa la página de registro
-import 'home_page.dart'; // Importa la página de inicio
+import 'welcome_page.dart'; // Importa la página de bienvenida
 
 class LoginPage extends StatefulWidget {
   @override
@@ -21,14 +21,14 @@ class _LoginPageState extends State<LoginPage> {
       );
       print("User logged in: ${userCredential.user!.email}");
 
-      // Navegar a la página de inicio (HomePage) después del login exitoso
+      // Navegar a la página de bienvenida (WelcomePage) después del login exitoso
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => WelcomePage()), // Redirigir a WelcomePage
       );
     } on FirebaseAuthException catch (e) {
       print("Error: $e");
-      // Puedes mostrar un mensaje de error en pantalla si hay un problema de autenticación
+      // Mostrar un diálogo de error si ocurre algo durante el inicio de sesión
       showDialog(
         context: context,
         builder: (ctx) => AlertDialog(
